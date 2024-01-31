@@ -12,7 +12,8 @@ void loop() {
   // Main code here, to run repeatedly:
   if (digitalRead(SENSOR) == LOW) {
     digitalWrite(LED, LOW);
-}
+  }
   else {
     digitalWrite(LED, HIGH);
   }
+}

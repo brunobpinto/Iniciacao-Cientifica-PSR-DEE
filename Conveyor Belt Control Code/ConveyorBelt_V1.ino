@@ -39,7 +39,7 @@ void loop() {
   if (status == 3){ // Status 3: Esperando a torrada passar. O sinal mudar de LOW para HIGH
     motorA.run(FORWARD); // Código para ligar o motor. BACKWARD e FORWARD
     Serial.println("Motor Ligado: Esperando a Torrada Passar");
-     if ((instanteAtual - instanteAnterior) >= 500){ // Esteira não detecta o pão. Espera um delay ate estar no Status 1 e ficar a procura do sinal
+     if (valorDigital == HIGH){ // HIGH é quando está distante. LOW é quando está perto. Se o valor for HIGH no sensor, significa que a torrada passou e agora o programa vira status 1 e fica a procura da proxima. 
       status = 1; 
     }
   }
